@@ -21,10 +21,6 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include <stdlib.h>
-#include <stdio.h>
-#include <array>
-#include <algorithm>
 
 
 using namespace std;
@@ -484,8 +480,7 @@ void merge(int array[], int leftIndex, int middleIndex, int rightIndex)
 	int i = leftIndex;
 	int j = middleIndex + 1;
 	int k = 0;
-	int temp[8];
-	temp[rightIndex - leftIndex + 1];
+	int *temp = new int[rightIndex - leftIndex + 1];
 
 	while (i <= middleIndex && j <= rightIndex)
 	{
@@ -535,6 +530,7 @@ void merge(int array[], int leftIndex, int middleIndex, int rightIndex)
 
 	}
 
+	delete[] temp;
 }
 
 
